@@ -6,7 +6,7 @@ class OAuthHmacSha1Signature extends OAuthSignatureMethod
     /**
      * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::getName()
      */
-    function getName()
+    public function getName()
     {
         return "HMAC-SHA1";
     }

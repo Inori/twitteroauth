@@ -14,7 +14,7 @@ class OAuthUtil
     /**
      * Encodes the data following the RFC 3986
      *
-     * @param array|string $input
+     * @param  array|string $input
      * @return array|string
      */
     public static function rfc3986Encode($input)
@@ -36,7 +36,7 @@ class OAuthUtil
     /**
      * Decodes the data following the RFC 3986
      *
-     * @param array|string $string
+     * @param  array|string $string
      * @return array|string
      */
     public static function rfc3986Decode($input)
@@ -56,8 +56,8 @@ class OAuthUtil
     }
 
     /**
-     * @param string $header
-     * @param boolean $OAuthParamsOnly
+     * @param  string  $header
+     * @param  boolean $OAuthParamsOnly
      * @return array
      */
     public static function splitHeader($header, $OAuthParamsOnly = true)
@@ -89,8 +89,8 @@ class OAuthUtil
     /**
      * Fetch HTTP headers
      *
-     * @param array $server
-     * @param array $env
+     * @param  array $server
+     * @param  array $env
      * @return array
      */
     public static function getHeaders(array $server, array $env)
@@ -109,8 +109,7 @@ class OAuthUtil
 
         array_walk(
             $server,
-            function ($value, $key) use (&$headers)
-            {
+            function ($value, $key) use (&$headers) {
                 if (substr($key, 0, 5) == "HTTP_") {
                     $key = static::prepareHeaderKey(ltrim($key, 'HTTP_'));
                     $headers[$key] = $value;
@@ -148,7 +147,7 @@ class OAuthUtil
      * Transforms strings like ACCEPT_ENCODING and ACCEPT-ENCODING
      * into Accept-Encoding
      *
-     * @param string $key
+     * @param  string $key
      * @return string
      */
     protected static function prepareHeaderKey($key)
@@ -163,7 +162,7 @@ class OAuthUtil
     /**
      * Creates an array from the query string
      *
-     * @param string $input
+     * @param  string $input
      * @return array
      */
     public static function parseParameters($input)
@@ -181,7 +180,7 @@ class OAuthUtil
     /**
      * Build the query string from the parameters
      *
-     * @param array $params
+     * @param  array  $params
      * @return string
      */
     public static function buildHttpQuery(array $params)

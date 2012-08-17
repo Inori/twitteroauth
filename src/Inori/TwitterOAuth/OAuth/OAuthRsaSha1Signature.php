@@ -17,19 +17,19 @@ abstract class OAuthRsaSha1Signature extends OAuthSignatureMethod
      * (2) fetch via http using a url provided by the requester
      * (3) some sort of specific discovery code based on request
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
-     * @return string Representation of the certificate
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @return string                                 Representation of the certificate
      */
-    protected abstract function fetchPublicCert(OAuthRequest $request);
+    abstract protected function fetchPublicCert(OAuthRequest $request);
 
     /**
      * Up to the SP to implement this lookup of keys. Possible ideas are:
      * (1) do a lookup in a table of trusted certs keyed off of consumer
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
-     * @return string Representation of the certificate
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @return string                                 Representation of the certificate
      */
-    protected abstract function fetchPrivateCert(OAuthRequest $request);
+    abstract protected function fetchPrivateCert(OAuthRequest $request);
 
     /**
      * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::buildSignature()

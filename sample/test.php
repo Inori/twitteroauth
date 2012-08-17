@@ -44,7 +44,8 @@ if (empty($active) || empty($_GET['confirmed']) || $_GET['confirmed'] !== 'TRUE'
   exit;
 }
 
-function twitteroauth_row($method, $response, $http_code, $parameters = '') {
+function twitteroauth_row($method, $response, $http_code, $parameters = '')
+{
   echo '<tr>';
   echo "<td><b>{$method}</b></td>";
   switch ($http_code) {
@@ -82,7 +83,8 @@ function twitteroauth_row($method, $response, $http_code, $parameters = '') {
 
 }
 
-function twitteroauth_header($header) {
+function twitteroauth_header($header)
+{
   echo '<tr><th colspan="4" style="background: grey;">', $header, '</th></tr>';
 }
 
@@ -105,7 +107,6 @@ twitteroauth_header('Help Methods');
 
 /* help/test */
 twitteroauth_row('help/test', $connection->get('help/test'), $connection->lastStatusCode());
-
 
 /**
  * Timeline Methods.
@@ -136,7 +137,6 @@ twitteroauth_row('statuses/retweeted_to_me', $connection->get('statuses/retweete
 /* statuses/retweets_of_me */
 twitteroauth_row('statuses/retweets_of_me', $connection->get('statuses/retweets_of_me'), $connection->lastStatusCode());
 
-
 /**
  * Status Methods.
  */
@@ -164,7 +164,6 @@ twitteroauth_row($method, $connection->post($method), $connection->lastStatusCod
 $method = 'statuses/retweets/6242973112';
 twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode());
 
-
 /**
  * User Methods.
  */
@@ -185,7 +184,6 @@ twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode
 /* statuses/followers */
 $method = 'statuses/followers/27831060';
 twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode());
-
 
 /**
  * List Methods.
@@ -224,11 +222,9 @@ twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode
 $method = "{$user->screen_name}/lists/memberships";
 twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode());
 
-
 /* GET list subscriptions */
 $method = "{$user->screen_name}/lists/subscriptions";
 twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode());
-
 
 /**
  * List Members Methods.
@@ -239,7 +235,6 @@ twitteroauth_header('List Members Methods');
 $method = "{$user->screen_name}/lists";
 $parameters = array('name' => 'Twitter OAuth Temp');
 $list = $connection->post($method, $parameters);
-
 
 /* POST list members */
 $parameters = array('id' => 27831060);
@@ -263,12 +258,10 @@ twitteroauth_row($method, $connection->delete($method, $parameters), $connection
 $method = "{$user->screen_name}/lists/{$list->id}";
 $connection->delete($method);
 
-
 /**
  * List Subscribers Methods.
  */
 twitteroauth_header('List Subscribers Methods');
-
 
 /* POST list subscribers */
 $method = 'oauthlib/test-list/subscribers';
@@ -285,7 +278,6 @@ twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode
 /* DELETE list subscribers */
 $method = 'oauthlib/test-list/subscribers';
 twitteroauth_row($method, $connection->delete($method), $connection->lastStatusCode());
-
 
 /**
  * Direct Message Methdos.
@@ -310,7 +302,6 @@ twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode
 $method = "direct_messages/destroy/{$dm->id}";
 twitteroauth_row($method, $connection->delete($method), $connection->lastStatusCode());
 
-
 /**
  * Friendships Methods.
  */
@@ -329,7 +320,6 @@ twitteroauth_row($method, $connection->get($method, $parameters), $connection->l
 $method = 'friendships/destroy/93915746';
 twitteroauth_row($method, $connection->post($method), $connection->lastStatusCode());
 
-
 /**
  * Social Graph Methods.
  */
@@ -342,7 +332,6 @@ twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode
 /* friends/ids */
 $method = 'friends/ids';
 twitteroauth_row($method, $connection->get($method), $connection->lastStatusCode());
-
 
 /**
  * Account Methods.

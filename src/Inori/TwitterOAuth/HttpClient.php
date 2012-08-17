@@ -37,8 +37,8 @@ class HttpClient
     private $httpInfo;
 
     /**
-     * @param int $timeout
-     * @param int $connectTimeout
+     * @param int     $timeout
+     * @param int     $connectTimeout
      * @param boolean $sslVerifyPeer
      */
     public function __construct(
@@ -54,7 +54,7 @@ class HttpClient
     /**
      * Do a GET request
      *
-     * @param string $url
+     * @param  string $url
      * @return string
      */
     public function get($url)
@@ -67,8 +67,8 @@ class HttpClient
     /**
      * Do a POST request
      *
-     * @param string $url
-     * @param string $parameters
+     * @param  string $url
+     * @param  string $parameters
      * @return string
      */
     public function post($url, $parameters)
@@ -87,8 +87,8 @@ class HttpClient
     /**
      * Do a DELETE request
      *
-     * @param string $url
-     * @param string $parameters
+     * @param  string $url
+     * @param  string $parameters
      * @return string
      */
     public function delete($url, $parameters)
@@ -164,7 +164,7 @@ class HttpClient
     }
 
     /**
-     * @param resource $handler
+     * @param  resource $handler
      * @return string
      */
     private function getResponse($handler)

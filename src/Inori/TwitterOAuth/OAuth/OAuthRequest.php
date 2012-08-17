@@ -36,7 +36,7 @@ class OAuthRequest
     /**
      * @param string $httpMethod
      * @param string $httpUrl
-     * @param array $parameters
+     * @param array  $parameters
      */
     public function __construct(
         $httpMethod,
@@ -56,9 +56,9 @@ class OAuthRequest
     /**
      * Attempt to build up a request from what was passed to the server
      *
-     * @param string $httpMethod
-     * @param string $httpUrl
-     * @param array $parameters
+     * @param  string                                 $httpMethod
+     * @param  string                                 $httpUrl
+     * @param  array                                  $parameters
      * @return \Inori\TwitterOAuth\OAuth\OAuthRequest
      */
     public static function fromRequest(
@@ -88,7 +88,7 @@ class OAuthRequest
     }
 
     /**
-     * @param array $requestHeaders
+     * @param  array $requestHeaders
      * @return array
      */
     protected static function getHeaderParameters(array $requestHeaders)
@@ -102,8 +102,8 @@ class OAuthRequest
     }
 
     /**
-     * @param string $httpMethod
-     * @param array $requestHeaders
+     * @param  string $httpMethod
+     * @param  array  $requestHeaders
      * @return array
      */
     protected static function getPostParameters(
@@ -124,11 +124,11 @@ class OAuthRequest
     /**
      * Pretty much a helper function to set up the request
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
-     * @param string $httpMethod
-     * @param string $httpUrl
-     * @param array $parameters
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthToken    $token
+     * @param  string                                  $httpMethod
+     * @param  string                                  $httpUrl
+     * @param  array                                   $parameters
      * @return \Inori\TwitterOAuth\OAuth\OAuthRequest
      */
     public static function fromConsumerAndToken(
@@ -157,9 +157,9 @@ class OAuthRequest
     }
 
     /**
-     * @param string $name
-     * @param mixed $value
-     * @param boolean $onDuplicateStack
+     * @param  string  $name
+     * @param  mixed   $value
+     * @param  boolean $onDuplicateStack
      * @return mixed
      */
     public function setParameter($name, $value, $onDuplicateStack = true)
@@ -176,7 +176,7 @@ class OAuthRequest
     }
 
     /**
-     * @param string $name
+     * @param  string $name
      * @return mixed
      */
     public function getParameter($name)
@@ -338,8 +338,8 @@ class OAuthRequest
 
     /**
      * @param \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
-     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer        $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken           $token
      */
     public function signRequest(
         OAuthSignatureMethod $signatureMethod,
@@ -361,8 +361,8 @@ class OAuthRequest
 
     /**
      * @param \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
-     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer        $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken           $token
      */
     public function buildSignature(
         OAuthSignatureMethod $signatureMethod,

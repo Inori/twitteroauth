@@ -8,7 +8,7 @@ abstract class OAuthSignatureMethod
      *
      * @return string
      */
-    public abstract function getName();
+    abstract public function getName();
 
     /**
      * Build up the signature
@@ -16,12 +16,12 @@ abstract class OAuthSignatureMethod
      * the encoding is handled in OAuthRequest when the final
      * request is serialized
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
-     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest  $request
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthToken    $token
      * @return string
      */
-    public abstract function buildSignature(
+    abstract public function buildSignature(
         OAuthRequest $request,
         OAuthConsumer $consumer,
         OAuthToken $token = null
@@ -30,10 +30,10 @@ abstract class OAuthSignatureMethod
     /**
      * Verifies that a given signature is correct
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
-     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
-     * @param string $signature
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest  $request
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthToken    $token
+     * @param  string                                  $signature
      * @return bool
      */
     public function checkSignature(

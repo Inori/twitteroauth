@@ -68,7 +68,7 @@ class TwitterClient extends TwitterOAuth
     }
 
     /**
-     * @param string $status
+     * @param  string $status
      * @return mixed
      */
     public function updateStatus($status)
@@ -80,7 +80,7 @@ class TwitterClient extends TwitterOAuth
     }
 
     /**
-     * @param string $screenName
+     * @param  string $screenName
      * @return mixed
      */
     public function createFriendship($screenName)
@@ -92,8 +92,8 @@ class TwitterClient extends TwitterOAuth
     }
 
     /**
-     * @param boolean $includeEntities
-     * @param boolean $skipStatus
+     * @param  boolean $includeEntities
+     * @param  boolean $skipStatus
      * @return mixed
      */
     public function verifyCredentials(

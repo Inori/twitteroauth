@@ -109,7 +109,7 @@ class OAuthServer
      * this parameter is not present.
      * Chapter 7.0 ('Accessing Protected Ressources')
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest   $request
      * @return string
      * @throws \Inori\TwitterOAuth\OAuth\OAuthException
      */
@@ -129,10 +129,10 @@ class OAuthServer
     /**
      * Figure out the signature with some defaults
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest         $request
      * @return \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod
-     * @throws \Inori\TwitterOAuth\OAuth\OAuthException When no signature was found
-     * @throws \Inori\TwitterOAuth\OAuth\OAuthException When the server does not support the requested signature
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException       When no signature was found
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException       When the server does not support the requested signature
      */
     private function getSignatureMethod(OAuthRequest $request)
     {
@@ -158,7 +158,7 @@ class OAuthServer
     /**
      * try to find the consumer for the provided request's consumer key
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest   $request
      * @return \Inori\TwitterOAuth\OAuth\OAuthConsumer
      * @throws \Inori\TwitterOAuth\OAuth\OAuthException
      */
@@ -182,9 +182,9 @@ class OAuthServer
     /**
      * try to find the token for the provided request's token key
      *
-     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
-     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param string $tokenType
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthRequest   $request
+     * @param  \Inori\TwitterOAuth\OAuth\OAuthConsumer  $consumer
+     * @param  string                                   $tokenType
      * @return \Inori\TwitterOAuth\OAuth\OAuthToken
      * @throws \Inori\TwitterOAuth\OAuth\OAuthException
      */
