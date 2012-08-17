@@ -1,5 +1,5 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 abstract class OAuthSignatureMethod
 {
@@ -16,9 +16,9 @@ abstract class OAuthSignatureMethod
      * the encoding is handled in OAuthRequest when the final
      * request is serialized
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
      * @return string
      */
     public abstract function buildSignature(
@@ -30,9 +30,9 @@ abstract class OAuthSignatureMethod
     /**
      * Verifies that a given signature is correct
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
      * @param string $signature
      * @return bool
      */

@@ -1,5 +1,5 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 class OAuthDataStore
 {

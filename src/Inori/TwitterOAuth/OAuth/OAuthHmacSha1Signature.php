@@ -1,10 +1,10 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 class OAuthHmacSha1Signature extends OAuthSignatureMethod
 {
     /**
-     * @see \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod::getName()
+     * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::getName()
      */
     function getName()
     {
@@ -12,7 +12,7 @@ class OAuthHmacSha1Signature extends OAuthSignatureMethod
     }
 
     /**
-     * @see \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod::buildSignature()
+     * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::buildSignature()
      */
     public function buildSignature(
         OAuthRequest $request,

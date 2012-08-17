@@ -1,5 +1,5 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 class OAuthServer
 {
@@ -21,12 +21,12 @@ class OAuthServer
     protected $version;
 
     /**
-     * @var \Abraham\TwitterOAuth\OAuth\OAuthDataStore
+     * @var \Inori\TwitterOAuth\OAuth\OAuthDataStore
      */
     protected $dataStore;
 
     /**
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthDataStore $dataStore
+     * @param \Inori\TwitterOAuth\OAuth\OAuthDataStore $dataStore
      */
     public function __construct(OAuthDataStore $dataStore)
     {
@@ -38,7 +38,7 @@ class OAuthServer
     }
 
     /**
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
+     * @param \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
      */
     public function addSignatureMethod(OAuthSignatureMethod $signatureMethod)
     {
@@ -109,9 +109,9 @@ class OAuthServer
      * this parameter is not present.
      * Chapter 7.0 ('Accessing Protected Ressources')
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
      * @return string
-     * @throws \Abraham\TwitterOAuth\OAuth\OAuthException
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException
      */
     private function getVersion(OAuthRequest $request)
     {
@@ -129,10 +129,10 @@ class OAuthServer
     /**
      * Figure out the signature with some defaults
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
-     * @return \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod
-     * @throws \Abraham\TwitterOAuth\OAuth\OAuthException When no signature was found
-     * @throws \Abraham\TwitterOAuth\OAuth\OAuthException When the server does not support the requested signature
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @return \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException When no signature was found
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException When the server does not support the requested signature
      */
     private function getSignatureMethod(OAuthRequest $request)
     {
@@ -158,9 +158,9 @@ class OAuthServer
     /**
      * try to find the consumer for the provided request's consumer key
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
-     * @return \Abraham\TwitterOAuth\OAuth\OAuthConsumer
-     * @throws \Abraham\TwitterOAuth\OAuth\OAuthException
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @return \Inori\TwitterOAuth\OAuth\OAuthConsumer
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException
      */
     private function getConsumer(OAuthRequest $request)
     {
@@ -182,11 +182,11 @@ class OAuthServer
     /**
      * try to find the token for the provided request's token key
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
      * @param string $tokenType
-     * @return \Abraham\TwitterOAuth\OAuth\OAuthToken
-     * @throws \Abraham\TwitterOAuth\OAuth\OAuthException
+     * @return \Inori\TwitterOAuth\OAuth\OAuthToken
+     * @throws \Inori\TwitterOAuth\OAuth\OAuthException
      */
     private function getToken(
         OAuthRequest $request,

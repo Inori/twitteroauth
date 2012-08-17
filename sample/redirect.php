@@ -4,8 +4,8 @@ session_start(); // Starts the session
 require_once __DIR__ . '/../boot.php'; // Includes the autoloader
 require_once 'config.php'; // Includes the configuration
 
-use \Abraham\TwitterOAuth\OAuth\OAuthConsumer;
-use \Abraham\TwitterOAuth\TwitterOAuth;
+use Inori\TwitterOAuth\OAuth\OAuthConsumer;
+use Inori\TwitterOAuth\TwitterOAuth;
 
 $connection = new TwitterOAuth(new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET)); // Build TwitterOAuth object with client credentials.
 

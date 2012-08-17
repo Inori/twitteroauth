@@ -1,5 +1,5 @@
 <?php
-namespace Abraham\TwitterOAuth;
+namespace Inori\TwitterOAuth;
 
 class HttpClient
 {

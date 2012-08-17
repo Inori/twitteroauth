@@ -8,9 +8,9 @@ session_start(); // Starts the session
 require_once __DIR__ . '/../boot.php'; // Includes the autoloader
 require_once 'config.php'; // Includes the configuration
 
-use \Abraham\TwitterOAuth\OAuth\OAuthConsumer;
-use \Abraham\TwitterOAuth\OAuth\OAuthToken;
-use \Abraham\TwitterOAuth\TwitterOAuth;
+use Inori\TwitterOAuth\OAuth\OAuthConsumer;
+use Inori\TwitterOAuth\OAuth\OAuthToken;
+use Inori\TwitterOAuth\TwitterOAuth;
 
 /* If access tokens are not available redirect to connect page. */
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {

@@ -1,5 +1,5 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 /**
  * @author Luís Otávio Cobucci Oblonczyk <lcobucci@gmail.com>
@@ -21,7 +21,7 @@ class OAuthUtil
     {
         if (is_array($input)) {
             return array_map(
-                array('\Abraham\TwitterOAuth\OAuth\OAuthUtil', 'rfc3986Encode'),
+                array('\Inori\TwitterOAuth\OAuth\OAuthUtil', 'rfc3986Encode'),
                 $input
             );
         }
@@ -43,7 +43,7 @@ class OAuthUtil
     {
         if (is_array($input)) {
             return array_map(
-                array('\Abraham\TwitterOAuth\OAuth\OAuthUtil', 'rfc3986Decode'),
+                array('\Inori\TwitterOAuth\OAuth\OAuthUtil', 'rfc3986Decode'),
                 $input
             );
         }

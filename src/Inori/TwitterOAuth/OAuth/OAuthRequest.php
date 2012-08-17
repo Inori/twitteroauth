@@ -1,5 +1,5 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 class OAuthRequest
 {
@@ -59,7 +59,7 @@ class OAuthRequest
      * @param string $httpMethod
      * @param string $httpUrl
      * @param array $parameters
-     * @return \Abraham\TwitterOAuth\OAuth\OAuthRequest
+     * @return \Inori\TwitterOAuth\OAuth\OAuthRequest
      */
     public static function fromRequest(
         $httpMethod = null,
@@ -124,12 +124,12 @@ class OAuthRequest
     /**
      * Pretty much a helper function to set up the request
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
      * @param string $httpMethod
      * @param string $httpUrl
      * @param array $parameters
-     * @return \Abraham\TwitterOAuth\OAuth\OAuthRequest
+     * @return \Inori\TwitterOAuth\OAuth\OAuthRequest
      */
     public static function fromConsumerAndToken(
         OAuthConsumer $consumer,
@@ -337,9 +337,9 @@ class OAuthRequest
     }
 
     /**
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
      */
     public function signRequest(
         OAuthSignatureMethod $signatureMethod,
@@ -360,9 +360,9 @@ class OAuthRequest
     }
 
     /**
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod $signatureMethod
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
      */
     public function buildSignature(
         OAuthSignatureMethod $signatureMethod,

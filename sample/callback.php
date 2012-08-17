@@ -6,12 +6,12 @@
  */
 
 session_start(); // Starts the session
-require_once __DIR__ . '/../boot.php'; // Includes the autoloader
+require_once __DIR__ . '/../tests/bootstrap.php'; // Includes the autoloader
 require_once 'config.php'; // Includes the configuration
 
-use \Abraham\TwitterOAuth\OAuth\OAuthConsumer;
-use \Abraham\TwitterOAuth\OAuth\OAuthToken;
-use \Abraham\TwitterOAuth\TwitterOAuth;
+use Inori\TwitterOAuth\OAuth\OAuthConsumer;
+use Inori\TwitterOAuth\OAuth\OAuthToken;
+use Inori\TwitterOAuth\TwitterOAuth;
 
 if (isset($_REQUEST['oauth_token'])
     && $_SESSION['oauth_token'] !== $_REQUEST['oauth_token']) {

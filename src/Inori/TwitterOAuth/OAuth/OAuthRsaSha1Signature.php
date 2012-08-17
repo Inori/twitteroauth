@@ -1,10 +1,10 @@
 <?php
-namespace Abraham\TwitterOAuth\OAuth;
+namespace Inori\TwitterOAuth\OAuth;
 
 abstract class OAuthRsaSha1Signature extends OAuthSignatureMethod
 {
     /**
-     * @see \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod::getName()
+     * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::getName()
      */
     public function getName()
     {
@@ -17,7 +17,7 @@ abstract class OAuthRsaSha1Signature extends OAuthSignatureMethod
      * (2) fetch via http using a url provided by the requester
      * (3) some sort of specific discovery code based on request
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
      * @return string Representation of the certificate
      */
     protected abstract function fetchPublicCert(OAuthRequest $request);
@@ -26,13 +26,13 @@ abstract class OAuthRsaSha1Signature extends OAuthSignatureMethod
      * Up to the SP to implement this lookup of keys. Possible ideas are:
      * (1) do a lookup in a table of trusted certs keyed off of consumer
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthRequest $request
+     * @param \Inori\TwitterOAuth\OAuth\OAuthRequest $request
      * @return string Representation of the certificate
      */
     protected abstract function fetchPrivateCert(OAuthRequest $request);
 
     /**
-     * @see \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod::buildSignature()
+     * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::buildSignature()
      */
     public function buildSignature(
         OAuthRequest $request,
@@ -51,7 +51,7 @@ abstract class OAuthRsaSha1Signature extends OAuthSignatureMethod
     }
 
     /**
-     * @see \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod::checkSignature()
+     * @see \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod::checkSignature()
      */
     public function checkSignature(
         OAuthRequest $request,

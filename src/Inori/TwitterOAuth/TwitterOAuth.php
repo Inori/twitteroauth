@@ -1,12 +1,12 @@
 <?php
-namespace Abraham\TwitterOAuth;
+namespace Inori\TwitterOAuth;
 
-use \Abraham\TwitterOAuth\OAuth\OAuthHmacSha1Signature;
-use \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod;
-use \Abraham\TwitterOAuth\OAuth\OAuthConsumer;
-use \Abraham\TwitterOAuth\OAuth\OAuthRequest;
-use \Abraham\TwitterOAuth\OAuth\OAuthToken;
-use \Abraham\TwitterOAuth\OAuth\OAuthUtil;
+use Inori\TwitterOAuth\OAuth\OAuthHmacSha1Signature;
+use Inori\TwitterOAuth\OAuth\OAuthSignatureMethod;
+use Inori\TwitterOAuth\OAuth\OAuthConsumer;
+use Inori\TwitterOAuth\OAuth\OAuthRequest;
+use Inori\TwitterOAuth\OAuth\OAuthToken;
+use Inori\TwitterOAuth\OAuth\OAuthUtil;
 
 class TwitterOAuth
 {
@@ -36,7 +36,7 @@ class TwitterOAuth
     const REQUEST_TOKEN_URL = 'https://api.twitter.com/oauth/request_token';
 
     /**
-     * @var \Abraham\TwitterOAuth\HttpClient
+     * @var \Inori\TwitterOAuth\HttpClient
      */
     private $client;
 
@@ -55,27 +55,27 @@ class TwitterOAuth
     public $decodeJson;
 
     /**
-     * @var \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod
+     * @var \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod
      */
     public $signMethod;
 
     /**
-     * @var \Abraham\TwitterOAuth\OAuth\OAuthConsumer
+     * @var \Inori\TwitterOAuth\OAuth\OAuthConsumer
      */
     private $consumer;
 
     /**
-     * @var \Abraham\TwitterOAuth\OAuth\OAuthToken
+     * @var \Inori\TwitterOAuth\OAuth\OAuthToken
      */
     private $token;
 
     /**
      * Construct TwitterOAuth object
      *
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthConsumer $consumer
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthToken $token
-     * @param \Abraham\TwitterOAuth\OAuth\OAuthSignatureMethod $signMethod
-     * @param \Abraham\TwitterOAuth\HttpClient $httpClient
+     * @param \Inori\TwitterOAuth\OAuth\OAuthConsumer $consumer
+     * @param \Inori\TwitterOAuth\OAuth\OAuthToken $token
+     * @param \Inori\TwitterOAuth\OAuth\OAuthSignatureMethod $signMethod
+     * @param \Inori\TwitterOAuth\HttpClient $httpClient
      */
     public function __construct(
         OAuthConsumer $consumer,
@@ -132,7 +132,7 @@ class TwitterOAuth
      * Get a request_token from Twitter
      *
      * @param string $oauthCallback
-     * @return \Abraham\TwitterOAuth\OAuth\OAuthConsumer
+     * @return \Inori\TwitterOAuth\OAuth\OAuthConsumer
      */
     public function getRequestToken($oauthCallback = null)
     {
