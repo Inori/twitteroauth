@@ -6,8 +6,8 @@
 
 /* Load required lib files. */
 session_start();
-require_once('twitteroauth/TwitterOAuth.php');
-require_once('config.php');
+require_once 'twitteroauth/TwitterOAuth.php';
+require_once 'config.php';
 
 /* If access tokens are not available redirect to connect page. */
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_token']['oauth_token']) || empty($_SESSION['access_token']['oauth_token_secret'])) {
@@ -38,7 +38,8 @@ if (empty($active) || empty($_GET['confirmed']) || $_GET['confirmed'] !== 'TRUE'
   exit;
 }
 
-function twitteroauth_row($method, $response, $http_code, $parameters = '') {
+function twitteroauth_row($method, $response, $http_code, $parameters = '')
+{
   echo '<tr>';
   echo "<td><b>{$method}</b></td>";
   switch ($http_code) {
@@ -76,7 +77,8 @@ function twitteroauth_row($method, $response, $http_code, $parameters = '') {
 
 }
 
-function twitteroauth_header($header) {
+function twitteroauth_header($header)
+{
   echo '<tr><th colspan="4" style="background: grey;">', $header, '</th></tr>';
 }
 
@@ -99,7 +101,6 @@ twitteroauth_header('Help Methods');
 
 /* help/test */
 twitteroauth_row('help/test', $connection->get('help/test'), $connection->http_code);
-
 
 /**
  * Timeline Methods.
@@ -130,7 +131,6 @@ twitteroauth_row('statuses/retweeted_to_me', $connection->get('statuses/retweete
 /* statuses/retweets_of_me */
 twitteroauth_row('statuses/retweets_of_me', $connection->get('statuses/retweets_of_me'), $connection->http_code);
 
-
 /**
  * Status Methods.
  */
@@ -158,7 +158,6 @@ twitteroauth_row($method, $connection->post($method), $connection->http_code);
 $method = 'statuses/retweets/6242973112';
 twitteroauth_row($method, $connection->get($method), $connection->http_code);
 
-
 /**
  * User Methods.
  */
@@ -179,7 +178,6 @@ twitteroauth_row($method, $connection->get($method), $connection->http_code);
 /* statuses/followers */
 $method = 'statuses/followers/27831060';
 twitteroauth_row($method, $connection->get($method), $connection->http_code);
-
 
 /**
  * List Methods.
@@ -218,11 +216,9 @@ twitteroauth_row($method, $connection->get($method), $connection->http_code);
 $method = "{$user->screen_name}/lists/memberships";
 twitteroauth_row($method, $connection->get($method), $connection->http_code);
 
-
 /* GET list subscriptions */
 $method = "{$user->screen_name}/lists/subscriptions";
 twitteroauth_row($method, $connection->get($method), $connection->http_code);
-
 
 /**
  * List Members Methods.
@@ -233,7 +229,6 @@ twitteroauth_header('List Members Methods');
 $method = "{$user->screen_name}/lists";
 $parameters = array('name' => 'Twitter OAuth Temp');
 $list = $connection->post($method, $parameters);
-
 
 /* POST list members */
 $parameters = array('id' => 27831060);
@@ -257,12 +252,10 @@ twitteroauth_row($method, $connection->delete($method, $parameters), $connection
 $method = "{$user->screen_name}/lists/{$list->id}";
 $connection->delete($method);
 
-
 /**
  * List Subscribers Methods.
  */
 twitteroauth_header('List Subscribers Methods');
-
 
 /* POST list subscribers */
 $method = 'oauthlib/test-list/subscribers';
@@ -279,7 +272,6 @@ twitteroauth_row($method, $connection->get($method), $connection->http_code);
 /* DELETE list subscribers */
 $method = 'oauthlib/test-list/subscribers';
 twitteroauth_row($method, $connection->delete($method), $connection->http_code);
-
 
 /**
  * Direct Message Methdos.
@@ -304,7 +296,6 @@ twitteroauth_row($method, $connection->get($method), $connection->http_code);
 $method = "direct_messages/destroy/{$dm->id}";
 twitteroauth_row($method, $connection->delete($method), $connection->http_code);
 
-
 /**
  * Friendships Methods.
  */
@@ -323,7 +314,6 @@ twitteroauth_row($method, $connection->get($method, $parameters), $connection->h
 $method = 'friendships/destroy/93915746';
 twitteroauth_row($method, $connection->post($method), $connection->http_code);
 
-
 /**
  * Social Graph Methods.
  */
@@ -336,7 +326,6 @@ twitteroauth_row($method, $connection->get($method), $connection->http_code);
 /* friends/ids */
 $method = 'friends/ids';
 twitteroauth_row($method, $connection->get($method), $connection->http_code);
-
 
 /**
  * Account Methods.
@@ -360,9 +349,6 @@ twitteroauth_row($method, $connection->post($method, $parameters), $connection->
 $parameters = array('location' => 'Teh internets');
 $method = 'account/update_profile';
 twitteroauth_row($method, $connection->post($method, $parameters), $connection->http_code, $parameters);
-
-
-
 
 /**
  * OAuth Methods.
